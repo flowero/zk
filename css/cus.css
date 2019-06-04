@@ -1,4 +1,4 @@
-
+.div-inline{display: inline;}
 .slider-padding {
 
     margin: 43px 0 0 0;
@@ -34,6 +34,25 @@
 }
 .myui-control-item{
 display: inline-block;
-
-
 }
+.mui-popover {
+    position: absolute;
+    z-index: 999;
+    display: none;
+    width: 280px;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s;
+        transition-property: opacity;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 0;
+    border-radius: 0;
+    background-color: #f7f7f7;
+    -webkit-box-shadow: 0 0 15px rgba(0,0,0,.1);
+    box-shadow: 0 0 15px rgba(0,0,0,.1);
+	left: 0px;
+}
+.mui-active{left: 0px !important;}
+#popover{left: 0px;}
