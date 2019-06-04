@@ -4,65 +4,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>2019苏州中考倒计时</title>
-	
 	<script src="js/cus.js"></script>
     <script src="js/mui.min.js"></script>
     <link href="css/mui.min.css" rel="stylesheet"/>
 	<link href="css/cus.css" rel="stylesheet"/>
 	<style type="text/css">
-	 #diving{
-	  width: 0px;
-	  height: 0px;
-	  background: red;
-	  position: fixed;
-	  top: 70%;
-	  left: 50%;
-	 }
-	 /*移除底部或顶部三角,需要在删除此代码*/
-	 .mui-popover .mui-popover-arrow:after {
-	  width: 0px; 
-	 }
-	 .mui-popover #popup{
-	  height: 30px;
-	 }
+		#div{
+			width: 0px;
+			height: 0px;
+			background: red;
+			position: fixed;
+			top: 70%;
+			left: 50%;
+		}
+		/*移除底部或顶部三角,需要在删除此代码*/
+		.mui-popover .mui-popover-arrow:after {
+			width: 0px;
+		}
+	
 	</style>
-	<script type="text/javascript">   
-	 mui.init()   
-	 document.getElementById("test").addEventListener("tap", function() { 
-	  //调用隐藏/显示弹出层    
-	  mui("#popover").popover('toggle', document.getElementById("diving"));  
-	 })  
-	</script><!--
-    <script type="text/javascript" charset="utf-8">
-      	//mui.init();
-		// 监听tap事件，解决 a标签 不能跳转页面问题  
-		//mui('body').on('tap','a',function(){document.location.href=this.href;});  
-    </script>-->
 </head>
 <body>
-<header class="mui-bar mui-bar-nav">
-	<!--<h1 class="mui-title post-title">2019苏州中考倒计时18天</h1>-->
-	<a href="#popover" class="mui-btn mui-btn-primary mui-btn-block">2019苏州中考倒计时18天</a>
+<header style = "background-color: #f60;" class="mui-bar mui-bar-nav">
+	<h1 style = "float: left;" class="mui-title post-title">2019苏州中考倒计时18天</h1>
+	<a style = "float: right;" class = " post-title" id="test">+关注</a>
 </header>
 <!-- 主界面菜单同时移动 -->
-
-
-<div id="popover" class="mui-popover">
-  <ul class="mui-table-view">
-	<img style = "text-align: center; height : 55px;" src = "canvas.png" /><!--
-    <li class="mui-table-view-cell"><a href="#">Item1</a></li>
-    <li class="mui-table-view-cell"><a href="#">Item2</a></li>
-    <li class="mui-table-view-cell"><a href="#">Item3</a></li>
-    <li class="mui-table-view-cell"><a href="#">Item4</a></li>
-    <li class="mui-table-view-cell"><a href="#">Item5</a></li>-->
-  </ul>
-</div>
-
-
-
-
-
-
+		<!--<div class="mui-content">
+			<a id="test">+关注</a>
+		</div>-->
+		<div id="div"></div>
+		<div id="popover" class="mui-popover" style="height: 120px;">
+			<div class="mui-popover-arrow"></div>
+			<div style = "display: table-cell;text-align: center; vertical-align: middle;">
+				<div style = "float: left;" class = "div-inline">
+					<img style = " width : 60px;" src = "canvas.png" />
+					<p>请扫描二维码关注亚诺</p>
+				</div>
+				<div style = "float: right;" class = "div-inline">
+					<img style = " width : 60px;" src = "canvas.png" />
+					<p>请扫描二维码关注亚诺</p>
+				</div>
+				
+			</div>
+			
+		</div>
 <!-- 侧滑导航根容器 -->
 <div class="mui-off-canvas-wrap mui-draggable">
 		<!-- 主页面容器 -->
@@ -361,7 +347,7 @@
 				</a>
 			</li>
 		</ul>
-		<img style = "text-align: center; height : 55px;" src = "canvas.png" />
+		<img style = "text-align: center; padding-top: 30px; height : 200px;" src = "canvas.png" />
 	</div>
 </div>
 <nav class="mui-bar mui-bar-tab" style = "position: fixed;">
@@ -382,5 +368,13 @@
 					<span class="mui-tab-label">设置</span>
 				</a>
 </nav>
+
+		<script type="text/javascript">
+			mui.init()
+			document.getElementById("test").addEventListener("tap", function() {
+				//调用隐藏/显示弹出层
+				mui("#popover").popover('toggle', document.getElementById("div"));
+			})
+		</script>
 </body>
 </html>
