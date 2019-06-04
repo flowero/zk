@@ -3,24 +3,67 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title></title>
+    <title>2019苏州中考倒计时</title>
 	
 	<script src="js/cus.js"></script>
     <script src="js/mui.min.js"></script>
     <link href="css/mui.min.css" rel="stylesheet"/>
 	<link href="css/cus.css" rel="stylesheet"/>
+	<style type="text/css">
+	 #diving{
+	  width: 0px;
+	  height: 0px;
+	  background: red;
+	  position: fixed;
+	  top: 70%;
+	  left: 50%;
+	 }
+	 /*移除底部或顶部三角,需要在删除此代码*/
+	 .mui-popover .mui-popover-arrow:after {
+	  width: 0px; 
+	 }
+	 .mui-popover #popup{
+	  height: 30px;
+	 }
+	</style>
+	<script type="text/javascript">   
+	 mui.init()   
+	 document.getElementById("test").addEventListener("tap", function() { 
+	  //调用隐藏/显示弹出层    
+	  mui("#popover").popover('toggle', document.getElementById("diving"));  
+	 })  
+	</script><!--
     <script type="text/javascript" charset="utf-8">
-      	mui.init();
+      	//mui.init();
 		// 监听tap事件，解决 a标签 不能跳转页面问题  
-		mui('body').on('tap','a',function(){document.location.href=this.href;});  
-    </script>
+		//mui('body').on('tap','a',function(){document.location.href=this.href;});  
+    </script>-->
 </head>
 <body>
 <header class="mui-bar mui-bar-nav">
-	<h1 class="mui-title post-title">2019苏州中考倒计时18天</h1>
+	<!--<h1 class="mui-title post-title">2019苏州中考倒计时18天</h1>-->
+	<a href="#popover" class="mui-btn mui-btn-primary mui-btn-block">2019苏州中考倒计时18天</a>
 </header>
 <!-- 主界面菜单同时移动 -->
-	<!-- 侧滑导航根容器 -->
+
+
+<div id="popover" class="mui-popover">
+  <ul class="mui-table-view">
+	<img style = "text-align: center; height : 55px;" src = "canvas.png" /><!--
+    <li class="mui-table-view-cell"><a href="#">Item1</a></li>
+    <li class="mui-table-view-cell"><a href="#">Item2</a></li>
+    <li class="mui-table-view-cell"><a href="#">Item3</a></li>
+    <li class="mui-table-view-cell"><a href="#">Item4</a></li>
+    <li class="mui-table-view-cell"><a href="#">Item5</a></li>-->
+  </ul>
+</div>
+
+
+
+
+
+
+<!-- 侧滑导航根容器 -->
 <div class="mui-off-canvas-wrap mui-draggable">
 		<!-- 主页面容器 -->
 		<div class="mui-inner-wrap">
@@ -52,7 +95,6 @@
 		<a href = "#c6" class="myui-control-item post-title"><div class=" post-title title-box "> 查分入口<br><p>5.20-6.4</p></div></a> 
 	</div>
 </div>
-
 <div class = "body-section">
 	<div class = "center-section">
 		<!--志愿填报-->
@@ -283,41 +325,6 @@
 			</li>
 		</ul>		
 		<!--查分入口-->
-<!-- 九宫格
-
-		<ul class="mui-table-view mui-grid-view mui-grid-9">
-			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-				<a href="#">
-					<button type="button" class="mui-btn mui-btn-primary-">杭州</button>
-				</a>
-			</li>
-			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-				<a href="#">
-					<button type="button" class="mui-btn mui-btn-primary">杭州</button>
-				</a>
-			</li>
-			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-				<a href="#">
-					<button type="button" class="mui-btn mui-btn-primary">杭州</button>
-				</a>
-			</li>
-			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-				<a href="#">
-					<button type="button" class="mui-btn mui-btn-primary">苏州</button>
-				</a>
-			</li>
-			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-				<a href="#">
-					<button type="button" class="mui-btn mui-btn-primary">杭州</button>
-				</a>
-			</li>
-			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-				<a href="#">
-					<button type="button" class="mui-btn mui-btn-primary">深圳</button>
-				</a>
-			</li>
-		</ul>
--->
 		<!--许愿墙-->
 		<div class="mui-content" style = "width: 80%; margin: auto;">
 			<div id = "c1" class = "h1-title">
@@ -354,23 +361,9 @@
 				</a>
 			</li>
 		</ul>
+		<img style = "text-align: center; height : 55px;" src = "canvas.png" />
 	</div>
-	<!--热门城市
-	<div class="mui-content">
-		<button type="button" class="mui-btn mui-btn-primary mui-btn-block">热门城市</button>
-	</div>
-	<div class="mui-content">
-		热点城市
-	</div>
-	<a href="#top">锚链接写</a>
-	<button type="button" class="mui-btn">默认</button>
-	<button type="button" class="mui-btn mui-btn-primary">蓝色</button>
-	<button type="button" class="mui-btn mui-btn-success">绿色</button>
-	<button type="button" class="mui-btn mui-btn-warning">黄色</button>
-	<button type="button" class="mui-btn mui-btn-danger">红色</button>
-	<button type="button" class="mui-btn mui-btn-royal">紫色</button> -->
 </div>
-
 <nav class="mui-bar mui-bar-tab" style = "position: fixed;">
 				<a class="mui-tab-item mui-active">
 					<span class="mui-icon mui-icon-home"></span>
@@ -389,6 +382,5 @@
 					<span class="mui-tab-label">设置</span>
 				</a>
 </nav>
-
 </body>
 </html>
