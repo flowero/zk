@@ -3,13 +3,9 @@
 .follow-container{height: 70px;}
 .follow-container button{float: right; top: 30%;}
 .div-inline{display: inline;}
-.slider-padding {
-
-    margin: 0;
-}
+.slider-padding {margin: 0;}
 .h1-title{padding: 20px 0;}
 .mui-off-canvas-wrap {
-
     position: relative;
     z-index: 1;
     overflow: hidden;

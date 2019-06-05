@@ -30,7 +30,7 @@
     * {
         margin: 0;
         padding: 0;
-		background-color: #ffffff;
+		/*background-color: #ffffff;*/
     }
     .header{
         height: 70px;
@@ -41,7 +41,7 @@
 
     .nav {
         height: 50px;
-        background: white;
+        /*background: white;*/
         width: 100%;
         font-size: 30px;
     }
@@ -426,12 +426,12 @@
         // 当导航栏到达屏幕顶端
         if (sTop >= oTop) {
             // 修改导航栏position属性，使之固定在屏幕顶端
-            $(".nav").css({ "position": "fixed", "top": "0"});
+            $(".nav").css({ "position": "fixed", "top": "0","background": "red"});
             // 修改内容的margin-top值，保证平滑过渡
             $(".content").css({ "margin-top": martop });
         } else {
             // 当导航栏脱离屏幕顶端时，回复原来的属性
-            $(".nav").css({ "position": "static" });
+            $(".nav").css({ "position": "static", "background":"white" });
             $(".content").css({ "margin-top": "0" });
         }
     });
