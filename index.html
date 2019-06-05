@@ -16,25 +16,56 @@
 			position: fixed;
 			bottom: 0%;
 			width: 100%;
-			
 		}
 		/*移除底部或顶部三角,需要在删除此代码*/
 		.mui-popover .mui-popover-arrow:after {
 			width: 0px;
 		}
-	
 	</style>
 </head>
 <body>
-	
-<header style = "background-color: #f60;" class="mui-bar mui--bar-nav">
-	<h1 style = "float: left;" class="mui-title post-title">广告投放</h1>
-	<a style = "float: right;" class = " post-title" id="test">+关注</a>
-</header>
+
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+		background-color: #ffffff;
+    }
+    .header{
+        height: 70px;
+        background:blue;
+        width: 100%;
+        font-size: 30px;
+    }
+
+    .nav {
+        height: 50px;
+        background: white;
+        width: 100%;
+        font-size: 30px;
+    }
+ 
+    .content{
+        height: 500px;
+        background:yellow;
+        width: 100%;
+        font-size: 30px;
+    }
+</style><!--
+<div class="header">这是顶部</div>
+<div class="nav">这是导航栏</div>
+<div class="content">这是内容</div>-->
+<div class = "">
+<!--<a style = "width: 70%;float: left;" class=" post-title">广告投放</a>-->
+	<div class = "follow-container">
+		<img style = "position: absolute; height: 70px;float: left; width : 100%;" src = "34.png" />
+		<button type="button" id = "test" class="follow mui-btn mui-btn-grey">+关注</button>
+	</div>
+	<!--<a style = "width: 100%;float: right; position: relative;" class = "post-title" id="test">+关注</a>-->
+</div>
+
 <!-- 主界面菜单同时移动 -->
-		<!--<div class="mui-content">
-			<a id="test">+关注</a>
-		</div>-->
 		<div id="div"></div>
 		<div id="popover" class="mui-popover" style="hecight: 400px; width: 100%; left: 0px; padding-bottom: 20px;">
 			<div class="mui-popover-arrow"></div>
@@ -65,7 +96,7 @@
 					  <div class="mui-slider-group">
 						<!--第一个内容区容器-->
 						<div class="mui-slider-item">
-						  <img style = "z-index: 3;" src="headback.png">
+						  <img style = "z-index: 3; height: 180px;" src="headback.png">
 						  <!--<a style = "float: right; z-index: 999;" class = " post-title" id="test">+关注</a>-->
 						</div>
 					  </div>
@@ -75,14 +106,14 @@
 		</div>
 </div>
 
-<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted"> 
+<div class=" nav mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted"> 
 	<div class="mui-scroll">
 		<a href = "#c1" class = "mui-active myui-control-item"><div class=" post-title title-box "> 志愿填报<br><p>5.20-6.4</p> </div> </a>
 		<a href = "#c2" class="myui-control-item post-title"><div class=" post-title title-box "> 自助招生<br><p>5.20-6.4</p></div> </a> 
 		<a href = "#c3" class="myui-control-item post-title"><div class=" post-title title-box "> 历年分数线<br><p>5.20-6.4</p></div></a> 
 		<a href = "#c4" class="myui-control-item post-title"><div class=" post-title title-box "> 考场直播<br><p>5.20-6.4</p></div></a> 
 		<a href = "#c5" class="myui-control-item post-title"><div class=" post-title title-box "> 中考真题<br><p>5.20-6.4</p></div></a> 
-		<a href = "#c6" class="myui-control-item post-title"><div class=" post-title title-box "> 查分入口<br><p>5.20-6.4</p></div></a> 
+		<a href = "#c6" class="myui-control-item post-title"><div class=" post-title title-box "> 查分入口<br><p>5.20-6.4</p></div></a>
 	</div>
 </div>
 <div class = "body-section">
@@ -354,6 +385,7 @@
 		<img style = "text-align: center; padding-top: 30px; height : 200px;" src = "canvas.png" />
 	</div>
 </div>
+<!--
 <nav class="mui-bar mui-bar-tab" style = "position: fixed;">
 				<a class="mui-tab-item mui-active">
 					<span class="mui-icon mui-icon-home"></span>
@@ -371,7 +403,7 @@
 					<span class="mui-icon mui-icon-gear"></span>
 					<span class="mui-tab-label">设置</span>
 				</a>
-</nav>
+</nav>-->
 
 		<script type="text/javascript">
 			mui.init()
@@ -380,5 +412,29 @@
 				mui("#popover").popover('toggle', document.getElementById("div"));
 			})
 		</script>
+		<script type="text/javascript">
+    // 获取导航栏到屏幕顶部的距离
+    var oTop = $(".nav").offset().top;
+    //获取导航栏的高度，此高度用于保证内容的平滑过渡
+    var martop = $('.nav').outerHeight();
+ 
+    var sTop = 0;
+    // 监听页面的滚动
+    $(window).scroll(function () {
+        // 获取页面向上滚动的距离
+        sTop = $(this).scrollTop();
+        // 当导航栏到达屏幕顶端
+        if (sTop >= oTop) {
+            // 修改导航栏position属性，使之固定在屏幕顶端
+            $(".nav").css({ "position": "fixed", "top": "0"});
+            // 修改内容的margin-top值，保证平滑过渡
+            $(".content").css({ "margin-top": martop });
+        } else {
+            // 当导航栏脱离屏幕顶端时，回复原来的属性
+            $(".nav").css({ "position": "static" });
+            $(".content").css({ "margin-top": "0" });
+        }
+    });
+</script>
 </body>
 </html>

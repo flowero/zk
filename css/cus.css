@@ -1,7 +1,11 @@
+.ads-up: {background-image: url(34.png);}
+.follow: {position: absolute; top:20px;float: right;}
+.follow-container{height: 70px;}
+.follow-container button{float: right; top: 30%;}
 .div-inline{display: inline;}
 .slider-padding {
 
-    margin: 43px 0 0 0;
+    margin: 0;
 }
 .h1-title{padding: 20px 0;}
 .mui-off-canvas-wrap {
@@ -32,6 +36,7 @@
     background-color: #f60;
 	border-radius: 26px;
 }
+.mui-btn-grey{border-radius: 26px;}
 .myui-control-item{
 display: inline-block;
 }
